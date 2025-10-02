@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Landing Page</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a2e0b6c0aa.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header class="hero">
@@ -12,35 +14,56 @@
       <div class="logo">MyBrand</div>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Features</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
       </ul>
     </nav>
     <div class="hero-content">
       <h1>Welcome to My Awesome Website</h1>
       <p>Your journey to greatness starts here. Let's build something amazing.</p>
-      <a href="#" class="cta-button">Get Started</a>
+      <a href="#contact" class="cta-button">Get Started</a>
     </div>
   </header>
 
-  <section class="features">
+  <section id="features" class="features">
     <div class="feature">
-      <h2>🚀 Fast Performance</h2>
+      <h2><i class="fas fa-rocket"></i> Fast Performance</h2>
       <p>Optimized for speed and smooth experience on all devices.</p>
     </div>
     <div class="feature">
-      <h2>🎨 Clean Design</h2>
+      <h2><i class="fas fa-paint-brush"></i> Clean Design</h2>
       <p>Modern, responsive, and visually appealing design.</p>
     </div>
     <div class="feature">
-      <h2>⚙️ Easy to Customize</h2>
+      <h2><i class="fas fa-cogs"></i> Easy to Customize</h2>
       <p>Well-structured code that you can easily modify to your needs.</p>
     </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>📬 Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
     <p>© 2025 MyBrand. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Dark mode toggle
+    const toggleBtn = document.getElementById("theme-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      const icon = toggleBtn.querySelector("i");
+      icon.classList.toggle("fa-moon");
+      icon.classList.toggle("fa-sun");
+    });
+  </script>
 </body>
 </html>
